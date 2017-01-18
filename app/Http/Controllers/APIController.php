@@ -91,7 +91,7 @@ class APIController extends Controller {
 		if($validator->fails()){
            return redirect()->back()->withErrors($validator);
 		}else{
-			$result = $addressObj->saveAddress($request->all());
+			$result = $addressObj->saveAddress($request->all(),$id);
 			if($result){
 	        	$this->message['success'] = "Contact is updated.";
 	        }else{
